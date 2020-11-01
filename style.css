@@ -1,0 +1,130 @@
+/* APPLIED TO THE WHOLE SHEET*/
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* APPLIED TO EVERYTHING IN BODY */
+body {
+	color: #545454;
+	display: flex;
+	font-family: sans-serif;
+	justify-content: center;
+}
+
+/* MAIN CONTAINER SPACE */
+.container {
+	background: #14BDAC;
+	margin: 50px;
+	padding: 50px;
+	/* width: 500px;
+	height: 500px; IF NOT SPECIFIED
+	WILL BE DETERMINED BY CHILDREN*/ 
+	/*rounded border*/
+	border-radius: 25px;
+}
+
+/* TITLE */
+.title {
+	text-align: center;
+}
+.title span{
+	color: #F2EBD3;
+}
+
+/* STATUS ACTION CLASS */
+.status-action {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 25px;
+	font-size: 25px;
+	height: 30px;
+}
+.reset {
+	/*functions like a button*/
+	cursor: pointer;
+}
+.reset:hover {
+	/*change to different color when user hovers*/
+	color: #F2EBD3;
+}
+.status span {
+	color: #F2EBD3;
+}
+
+/* GAME GRID CLASS */
+.game-grid {
+	display: grid;
+	margin-top: 50px;
+	/*divides space evenly*/
+	grid-template-columns: repeat(3, 1fr); 
+	grid-template-rows: repeat(3, 1fr);
+	/* does spacing between grid boxes*/
+	grid-gap: 15px;
+	background: #0DA192;
+}
+.game-cell {
+	height: 200px;
+	width: 200px;
+	background: #14BDAC;
+	cursor: pointer;
+	display: flex;
+	justify-content: center; /*horizontal center*/
+	align-items: center; /*vertical center*/
+}
+
+.x, 
+.o {
+	cursor: default;
+}
+
+.x::after {
+	content: '×';
+	font-size: 200px;
+}
+.o::after {
+	content: '○';
+	font-size: 210px;
+	color: #F2EBD3;
+}
+
+.won::after {
+	color: #BD022F;
+}
+
+@media only screen and (max-width: 1024px) {
+	.game-grid {
+		margin-top: 25px;
+		grid-gap: 10px;
+	}
+	.game-cell {
+		height: 150px;
+		width: 150px;
+	}
+	.x::after {
+		font-size: 150px;
+	}
+	.o::after {
+		font-size: 175px;
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	.container {
+		margin-top: 25px;
+		grid-gap: 25px;
+	}
+	.game-cell {
+		height: 100px;
+		width: 100px;
+	}
+	.x::after {
+		font-size: 100px;
+	}
+	.o::after {
+		font-size: 125px;
+	}
+}
+
+
